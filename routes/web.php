@@ -22,3 +22,5 @@ Route::get('loop', 'CollectionController@loop');
 Route::get('teste2', 'CollectionController@teste2');
 Route::get('teste3', 'CollectionController@teste3');
 Route::get('teste4', 'CollectionController@teste4');
+Route::get('teste5', 'CollectionController@debugging');
+Route::get('teste6', 'CollectionController@has');

@@ -99,4 +99,27 @@ class CollectionController extends Controller
         });
         
     }
+
+    //Debugging a collection
+    public function debugging()
+    {
+        $collection = collect(['Renato', 'Leidiany', 'Alexandre']);
+        $collection->dump();
+    }
+
+    //Has
+    public function has()
+    {
+        $collection = collect([
+            'title' => 'Harry Potter',
+            'author' => 'J.K. Rowling',
+            'price' => 200
+        ]);
+        $value1 = $collection->has('author'); // true
+        $value2 = $collection->has(['title', 'price']); // true
+        $value3 = $collection->has(['price', 'rating']); // false
+        dump($value1);
+        dump($value2);
+        dump($value3);
+    }
 }

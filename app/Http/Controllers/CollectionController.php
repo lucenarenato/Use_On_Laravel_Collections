@@ -122,4 +122,50 @@ class CollectionController extends Controller
         dump($value2);
         dump($value3);
     }
+
+    public function implode()
+    {
+        $collection =collect([
+            ['title' => 'Gift card', 'price' => 50],
+            ['title' => 'Chair', 'price' => 80],
+        ]);
+        $collection->implode('title', ', ');
+        dd($collection);
+    }
+
+    public function implod()
+    {
+        $collection = collect([1,2,'foo',3,'bar']);
+        $collection->implode('-');
+        echo($collection);
+    }
+
+    public function push()
+    {
+        $collection = collect([1,2,3]);
+        $collection->push(4);
+        $collection->all();
+        echo $collection;
+    }
+
+    public function pull()
+    {
+        $collection = collect([
+            'title' => 'Harry Potter',
+            'author' => 'J.K. Rowling',
+            'price' => 25
+        ]);
+        $collection->pull('author'); // 'J.K. Rowling'
+        $collection->all();
+        echo $collection;
+    }
+
+    public function shuffle()
+    {
+        $collection = collect([1,2,3,4,5,6,7,8,9,0]);
+        $shuffle = $collection->shuffle();
+        $shuffle->all();
+        echo $shuffle;
+
+    }
 }
